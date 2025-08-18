@@ -5,16 +5,15 @@ import Image from "next/image";
 import ArtGallery from "./Art";
 
 export default function S1() {
-    const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobileOrTablet(window.innerWidth < 1024);
-        };
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    // useEffect(() => {
+    //     const handleResize = () => {
+    //         setIsMobileOrTablet(window.innerWidth < 1024);
+    //     };
+    //     handleResize();
+    //     window.addEventListener("resize", handleResize);
+    //     return () => window.removeEventListener("resize", handleResize);
+    // }, []);
 
     return (
         <div className="font-poppins bg-white">
@@ -57,7 +56,7 @@ function Introduction() {
             <h1 className="text-4xl md:text-6xl font-bold text-blue mb-10">Introduction</h1>
             <div className="max-w-3xl text-blue text-lg md:text-xl space-y-6">
                 <p>
-                    SAGA is an Australian origin company with strong Australian leadership, built on a foundation of engineering excellence and strategic vision. With the acquisition of an Indian company, SAGA deepens its connection to Australia’s engineering precision and India’s adaptability, redefining how people interact with technology in their everyday lives.
+                    SAGA is an Australian origin company with strong Australian leadership, built on a foundation of engineering excellence and strategic vision. With the acquisition of an Indian company, SAGA deepens its connection to Australia&apos;s engineering precision and India&apos;s adaptability, redefining how people interact with technology in their everyday lives.
                 </p>
                 <p>
                     Our journey began in Australasia, where we identified a need for flexible, safe, and intelligent solutions that enhance modern living. From pioneering cutting-edge power track systems to integrated smart home solutions, we have always been driven by a vision of progress and innovation.
@@ -418,7 +417,7 @@ function CoreStructure() {
                 </h2>
 
                 <p className="text-gray-700 mb-6">
-                    The three circular lines at the end symbolize Saga’s core pillars
+                    The three circular lines at the end symbolize Saga&apos;s core pillars
                     <span className="font-semibold"> Innovation, Quality,</span> and
                     <span className="font-semibold"> Connectivity</span>.
                 </p>
