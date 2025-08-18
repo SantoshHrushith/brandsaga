@@ -144,7 +144,7 @@ function PackingSection() {
         <div className="w-full md:w-1/2 text-white font-poppins">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">Packaging</h2>
           <p className="text-lg md:text-xl font-light leading-relaxed mb-4">
-            The Saga brand pattern is inspired by Australian native art, particularly the dot painting technique traditionally used by Indigenous Australian artists. This pattern serves as a visual bridge between Saga’s Australian roots and its presence in Pakistan, where the name "Saga" is also linked to "saggar" meaning ocean or vastness in Urdu.
+            The Saga brand pattern is inspired by Australian native art, particularly the dot painting technique traditionally used by Indigenous Australian artists. This pattern serves as a visual bridge between Saga&apos;s Australian roots and its presence in Pakistan, where the name &quot;Saga&quot; is also linked to &quot;saggar&quot; meaning ocean or vastness in Urdu.
           </p>
           <p className="text-lg md:text-xl font-light leading-relaxed">
             The pattern of Saga is inspired by Australian Aboriginal art. This art form is made up of intricate shapes, symbols, and flowing lines, with dots being the main elements. These dots hold deep cultural significance, telling stories of heritage, nature, and community. They come together to form unique patterns that reflect traditions, journeys, and connections, making each design meaningful and visually striking.
