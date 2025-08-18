@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
@@ -285,12 +286,12 @@ export default function Section1() {
                 <div className="m-purpose-text">
 
                   <h2>Purpose Of Existing</h2>
-                  <p>
-                    The SAGA series is a reflection of this philosophy - a refined,
-                  power system engineered for modern living. From intimate
-                  homes to dynamic workspaces, SAGA offers a seamless
-                  blend of form.
-                  </p>
+                    <p>
+                      The SAGA series is a reflection of this philosophy - a refined,
+                      power system engineered for modern living. From intimate
+                      homes to dynamic workspaces, SAGA offers a seamless
+                      blend of form.
+                    </p>
                 </div>
               </div>
               <div ref={mbt} className="mobile-images">
@@ -331,8 +332,8 @@ export default function Section1() {
                   and evolve.
                 </p>
                 <p>
-                  Every detail is intentional. Every edge, precise. SAGA isn't just
-                  about powering devices - it's about powering lifestyles with
+                  Every detail is intentional. Every edge, precise. SAGA isn&apos;t just
+                  about powering devices - it&apos;s about powering lifestyles with
                   purpose and elegance.
                 </p>
               </div>
