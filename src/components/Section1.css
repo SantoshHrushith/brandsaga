@@ -1,0 +1,382 @@
+.oval-logo {
+  transition: transform 0.5s ease-in-out;
+}
+
+.oval-logo:hover {
+  transform: scale(1.05);
+}
+
+.lets-talk-btn {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.lets-talk-btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #d9d9d9;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.lets-talk-btn:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+@media (max-width: 768px) {
+  .split-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .image-container {
+    height: 50vh;
+  }
+}
+
+.property-item {
+  position: relative;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: padding 0.3s ease;
+}
+
+.property-item:hover {
+  padding-left: 10px;
+}
+
+.footer-link {
+  position: relative;
+  /* display: inline-block; */
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.875rem;
+  transition: transform 0.3s ease;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #d9d9d9;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.footer-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+.scroll-indicator-text {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.scroll-indicator-line {
+  width: 1px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation: scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+
+  51% {
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0.7;
+  }
+}
+
+/* Section1 */
+.section1 {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.leftDiv,
+.rightDiv {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftDiv {
+  width: 100vw;
+  background-color: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.rightDiv {
+  width: 0;
+  background-color: #ddd;
+}
+
+.image-container {
+  position: relative;
+  text-align: center;
+}
+
+.left-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.left-image-text {
+  width: 200px;
+  object-fit: contain;
+  transition: transform 0.001s ease;
+  will-change: transform, opacity;
+}
+
+.overlay-text {
+  position: absolute;
+  width: 350%;
+  /* max-width: 800px; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  color: white;
+  padding: 0 2rem;
+}
+
+.overlay-text h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 2.5rem;
+  text-align: left;
+  color: #ffffff;
+}
+
+.overlay-text p {
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  line-height: 1.8;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  max-width: 650px;
+  color: #e0e0e0;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.right-images {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.image-stack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.base-img,
+.overlay-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+}
+
+.overlay-img {
+  transform: translateY(100%);
+  z-index: 2;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.base-img {
+  z-index: 1;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  font-size: 16px;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  /* mobileview */
+
+  .mobile-content {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    background: black;
+    color: white;
+  }
+
+  .image-stack {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .m-purpose-text h2 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .m-purpose-text p {
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    line-height: 1.8;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    max-width: 650px;
+    color: #e0e0e0;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .mobile-logo-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile-logo {
+    width: 50%;
+    max-width: 500px;
+    transition: transform 1s ease;
+  }
+
+  .mobile-logo-text {
+    margin-top: 1vh;
+    width: 70%;
+    max-width: 600px;
+    opacity: 0;
+    color: white;
+    padding: 0 2rem;
+  }
+
+
+  .mobile-purpose {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: height 0.5s ease;
+  }
+
+  .m-purpose-text {
+    text-align: center;
+    padding: 2rem;
+    max-width: 700px;
+    color: white;
+  }
+
+
+
+  .mobile-images {
+    width: 100%;
+    height: 0vh;
+    /* position: relative; */
+    /* position: relative; */
+    left: 0;
+    bottom: 0;
+    top: 30vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;
+    transition: height 0.6s ease;
+    z-index: 9;
+
+  }
+
+  .m-scroll-hint {
+    position: absolute;
+    bottom: 80px;
+    color: #fff;
+    opacity: 0.5;
+    text-align: center;
+    font-size: 15px;
+    align-items: center;
+
+  }
+
+}
