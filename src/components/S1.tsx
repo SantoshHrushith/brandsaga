@@ -54,7 +54,7 @@ export default function S1() {
 
 function Introduction() {
     return (
-        <section className="w-full h-screen bg-white py-16 px-6 flex flex-col items-start justify-center min-h-[60vh]">
+        <section className="w-full min-h-screen bg-white py-16 px-6 flex flex-col items-start justify-center min-h-[60vh]">
             <div className="w-[85%] mx-auto">
 
                 <h1 className="text-4xl md:text-6xl font-[500] text-blue mb-20">Introduction</h1>
@@ -76,7 +76,7 @@ function Introduction() {
 
 function MissionVisionValues() {
     return (
-        <div className="w-full h-[90vh] bg-blue py-16 px-4 flex flex-col items-center justify-center">
+        <div className="w-full min-h-[90vh] bg-blue py-16 px-4 flex flex-col items-center justify-center">
             <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-3 gap-10 items-start text-center">
                 {/* Mission */}
                 <div className="flex flex-col items-center">
@@ -121,7 +121,7 @@ function MissionVisionValues() {
 
 function StrategicCultural() {
     return (
-        <section className="w-full h-[90vh] bg-white py-16 px-4 flex flex-col items-center justify-center">
+        <section className="w-full min-h-[90vh] bg-white py-16 px-4 flex flex-col items-center justify-center">
             <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-start text-center">
                 {/* Strategic Positioning */}
                 <div className="flex flex-col items-center">
@@ -161,7 +161,7 @@ function SagaLogoSet() {
     return (
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 bg-black min-h-screen py-12 px-4">
             {/* Left: Blue logo */}
-            <div className="rounded-3xl overflow-hidden bg-blue flex items-center justify-center w-full md:w-1/2 aspect-square max-w-2xl">
+            <div className="rounded-3xl overflow-hidden bg-blue flex items-center justify-center w-full md:w-1/2 aspect-[2/1] md:aspect-square max-w-[90vw] md:max-w-2xl">
                 <Image
                     src="https://eubiq.b-cdn.net/saga/sagatext-caption.png"
                     alt="SAGA Blue Logo"
@@ -172,7 +172,7 @@ function SagaLogoSet() {
                 />
             </div>
             {/* Right: Yellow and Green logos */}
-            <div className="flex flex-col gap-8 w-full md:w-1/2 max-w-2xl">
+            <div className="flex flex-col gap-8 w-full md:w-1/2 max-w-[90vw] md:max-w-2xl">
                 <div className="rounded-3xl overflow-hidden bg-yellow flex items-center justify-center aspect-[2/1]">
                     <Image
                         src="https://eubiq.b-cdn.net/saga/sagatext-caption.png"
@@ -203,22 +203,22 @@ function SagaLogoExplained() {
     return (
         <section className="w-full bg-blue flex flex-col items-center justify-center py-16 px-4 min-h-[90vh] relative overflow-hidden">
             {/* Background image tilted 45deg with opacity-10 */}
-            <div className="absolute inset-0 w-full h-full pointer-events-none z-0 flex items-center justify-center">
+            <div className="absolute inset-0 w-[1500px] h-[1500px] md:w-full md:h-full pointer-events-none z-0 flex items-center justify-center">
                 <Image
                     src="https://eubiq.b-cdn.net/saga/logo-icon-.png" // Change to your desired image path
                     alt="Background Logo Icon"
                     width={4000}
                     height={4000}
-                    className="object-cover opacity-5 rotate-135"
+                    className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:left-0 md:top-0 md:-translate-x-0 md:-translate-y-0 object-cover opacity-5 rotate-135"
                     priority
                 />
             </div>
             <div className="flex flex-col md:flex-col items-center justify-center gap-12 w-full max-w-[80%] relative z-10">
                 {/* Left: Logo and icons row */}
                 <div className="flex flex-col gap-8 items-center w-full ">
-                    <div className="flex flex-row items-center justify-center md:w-1/2">
+                    <div className="flex flex-col md:flex-row items-center gap-5 md:gap-0 justify-center md:w-1/2">
                         {/* SAGA wordmark */}
-                        <div className="-ms-20 mr-10">
+                        <div className="md:-ms-20 md:mr-10">
                             <Image
                                 src="/images/s-highligh.png"
                                 alt="SAGA Wordmark"
@@ -242,7 +242,7 @@ function SagaLogoExplained() {
                         </div>
                         <span className="text-white text-2xl font-light">+</span>
                         {/* Key Product */}
-                        <div className="ms-20">
+                        <div className="md:ms-20">
                             <Image
                                 src="/images/soc.png"
                                 alt="Key Product"
@@ -254,7 +254,7 @@ function SagaLogoExplained() {
                         </div>
                     </div>
                     {/* Move label text below image row */}
-                    <div className="flex flex-row items-center justify-between md:w-[50vw] gap-5 mt-8 px-2">
+                    <div className="hidden md:flex flex-row items-center justify-between md:w-[50vw] gap-5 mt-8 px-2">
                         <span className="text-white text-base md:text-lg font-light text-center flex-1">
                             “S” FROM THE WORDMARK
                         </span>
@@ -268,7 +268,7 @@ function SagaLogoExplained() {
                 </div>
                 {/* Right: Description */}
                 <div className="flex flex-col items-center justify-center w-full md:w-1/2 mt-10 md:mt-0">
-                    <p className="text-white text-lg md:text-2xl font-light text-center max-w-xl">
+                    <p className="text-white text-xl md:text-2xl font-light text-center max-w-xl">
                         The icon is a stylized ‘S’, taken from the brand name Saga, and designed to appear bold and modern.
                     </p>
                 </div>
@@ -279,9 +279,9 @@ function SagaLogoExplained() {
 
 function LogoCards() {
     return (
-        <section className="w-full flex  h-[80vh] md:h-screen flex-row items-center justify-center gap-20 p-6">
+        <section className="w-full flex flex-col md:flex-row h-[80vh] md:h-screen items-center justify-center gap-5 md:gap-20 p-6">
             {/* Card 1 */}
-            <div className="flex items-center justify-center w-40 h-60 md:w-[25vw] md:h-[70vh] rounded-4xl bg-[#001f3f]">
+            <div className="flex items-center justify-center w-70 h-60 md:w-[25vw] md:h-[70vh] rounded-4xl bg-[#001f3f]">
                 <Image
                     src="https://eubiq.b-cdn.net/saga/logo-icon-.png"
                     alt="SAGA Green Logo"
@@ -293,7 +293,7 @@ function LogoCards() {
             </div>
 
             {/* Card 2 */}
-            <div className="flex items-center justify-center w-40 h-60 md:w-[25vw] md:h-[70vh] rounded-4xl bg-yellow">
+            <div className="flex items-center justify-center w-70 h-60 md:w-[25vw] md:h-[70vh] rounded-4xl bg-yellow">
                 <Image
                     src="/images/logo-black.png"
                     alt="SAGA Green Logo"
@@ -305,7 +305,7 @@ function LogoCards() {
             </div>
 
             {/* Card 3 */}
-            <div className="flex items-center justify-center w-40 h-60 md:w-[25vw] md:h-[70vh] rounded-4xl bg-green">
+            <div className="flex items-center justify-center w-70 h-60 md:w-[25vw] md:h-[70vh] rounded-4xl bg-green">
                 <Image
                     src="https://eubiq.b-cdn.net/saga/logo-icon-.png"
                     alt="SAGA Green Logo"

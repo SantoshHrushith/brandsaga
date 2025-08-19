@@ -13,7 +13,7 @@ interface ColorCardProps {
 const ColorCard = ({ title, hex, description, rgb, cmyk, bg, textColor = "text-white", classname = "" }: ColorCardProps) => {
   return (
     <div
-      className={`rounded-2xl p-6 flex flex-col justify-between shadow-lg w-full sm:w-[280px] md:w-[370px] h-[70vh] ${textColor} ${classname}`}
+      className={`rounded-2xl p-6 flex flex-col justify-between shadow-lg w-full sm:w-[280px] h-60 md:w-[370px] md:h-[70vh] ${textColor} ${classname}`}
       style={{ backgroundColor: bg }}
     >
       {/* Top Content */}
@@ -24,7 +24,7 @@ const ColorCard = ({ title, hex, description, rgb, cmyk, bg, textColor = "text-w
       </div>
 
       {/* Bottom Content */}
-      <div className="flex justify-between text-sm mt-6">
+      <div className="hidden md:flex justify-between text-sm mt-6 ">
         <div>
           <p>R: {rgb.r}</p>
           <p>G: {rgb.g}</p>
@@ -44,10 +44,10 @@ const ColorCard = ({ title, hex, description, rgb, cmyk, bg, textColor = "text-w
 export default function S2() {
   return (
     <>
-      <section className="w-full h-screen bg-black text-white py-12 px-6">
+      <section className="w-full min-h-screen bg-black text-white py-12 px-6">
         <h2 className="text-3xl md:text-5xl font-[500] text-center mb-5">Colors Pallets</h2>
 
-        <div className="flex md:flex-row justify-center items-center gap-12">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-12">
           <ColorCard
             title="Blue Whale"
             hex="#01203F"
@@ -55,7 +55,7 @@ export default function S2() {
             rgb={{ r: 1, g: 32, b: 63 }}
             cmyk={{ c: 99, m: 84, y: 44, k: 53 }}
             bg="#01203F"
-            classname="-mt-15 md:-mt-25"
+            classname="md:-mt-25"
 
           />
 
@@ -78,7 +78,7 @@ export default function S2() {
             cmyk={{ c: 19, m: 0, y: 84, k: 0 }}
             bg="#D9E74C"
             textColor="text-blue"
-            classname="-mt-15 md:-mt-25"
+            classname="md:-mt-25"
 
           />
         </div>
@@ -96,10 +96,10 @@ export default function S2() {
 
 function ColorRatio() {
   return (
-    <section className="w-full h-screen bg-gray-50 py-12 ">
-      <div className="flex flex-row gap-6 w-[90%] mx-auto">
+    <section className="w-screen min-h-screen bg-gray-50 py-12 ">
+      <div className="flex flex-col md:flex-row gap-6 w-[90%] mx-auto">
         {/* 60% - Primary */}
-        <div className="relative bg-[#01203F] rounded-2xl flex items-center justify-center h-[90vh] w-1/2">
+        <div className="relative bg-[#01203F] rounded-2xl flex items-center justify-center h-100 md:h-[90vh] w-full md:w-1/2">
           {/* Number Image */}
           <div>
 
@@ -115,7 +115,7 @@ function ColorRatio() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-6 h-[90vh] w-1/2">
+        <div className="flex flex-col gap-6 h-90 md:h-[90vh] w-full md:w-1/2">
           {/* 30% - Secondary */}
           <div className="relative bg-[#01814E] rounded-2xl flex items-center justify-center h-2/3">
 
@@ -202,7 +202,7 @@ function Imaginary() {
         alt="Tangled to sleek"
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] object-contain z-0"
       />
-      <div className="text-white text-6xl font-[600]"><h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">Imaginary Style</h1>
+      <div className="text-white text-2xl md:text-6xl font-[600]"><h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">Imaginary Style</h1>
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function LogoIconInfo() {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center h-screen bg-white px-8 py-16">
+    <section className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-white px-8 py-16">
       {/* Left: Text */}
       <div className="md:w-1/2 w-full font-[200] max-w-xl mb-12 md:mb-0">
         <h1 className="text-4xl md:text-6xl font-[600] text-blue mb-8">Logo Icon</h1>
