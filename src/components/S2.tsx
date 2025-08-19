@@ -7,19 +7,20 @@ interface ColorCardProps {
   cmyk: { c: number; m: number; y: number; k: number };
   bg: string;
   textColor?: string;
+  classname?: string;
 }
 
-const ColorCard = ({ title, hex, description, rgb, cmyk, bg, textColor = "text-white" }: ColorCardProps) => {
+const ColorCard = ({ title, hex, description, rgb, cmyk, bg, textColor = "text-white", classname = "" }: ColorCardProps) => {
   return (
     <div
-      className={`rounded-2xl p-6 flex flex-col justify-between shadow-lg w-full sm:w-[280px] md:w-[320px] h-[420px] ${textColor}`}
+      className={`rounded-2xl p-6 flex flex-col justify-between shadow-lg w-full sm:w-[280px] md:w-[370px] h-[70vh] ${textColor} ${classname}`}
       style={{ backgroundColor: bg }}
     >
       {/* Top Content */}
       <div>
-        <h3 className="text-2xl font-semibold mb-1">{title}</h3>
-        <p className="font-medium">{hex}</p>
-        <p className="mt-2 text-sm opacity-90 leading-relaxed">{description}</p>
+        <h3 className="text-3xl font-[400] mb-1">{title}</h3>
+        <p className="text-2xl font-[200]">{hex}</p>
+        <p className="mt-2 font-[200] text-md opacity-90 leading-relaxed w-[60%]">{description}</p>
       </div>
 
       {/* Bottom Content */}
@@ -43,10 +44,10 @@ const ColorCard = ({ title, hex, description, rgb, cmyk, bg, textColor = "text-w
 export default function S2() {
   return (
     <>
-      <section className="w-full bg-black text-white py-12 px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Colors Pallets</h2>
+      <section className="w-full h-screen bg-black text-white py-12 px-6">
+        <h2 className="text-3xl md:text-5xl font-[500] text-center mb-5">Colors Pallets</h2>
 
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+        <div className="flex md:flex-row justify-center items-center gap-12">
           <ColorCard
             title="Blue Whale"
             hex="#01203F"
@@ -54,6 +55,8 @@ export default function S2() {
             rgb={{ r: 1, g: 32, b: 63 }}
             cmyk={{ c: 99, m: 84, y: 44, k: 53 }}
             bg="#01203F"
+            classname="-mt-15 md:-mt-25"
+
           />
 
           <ColorCard
@@ -63,6 +66,8 @@ export default function S2() {
             rgb={{ r: 1, g: 129, b: 78 }}
             cmyk={{ c: 88, m: 25, y: 88, k: 11 }}
             bg="#01814E"
+            classname="md:mt-10"
+
           />
 
           <ColorCard
@@ -72,7 +77,9 @@ export default function S2() {
             rgb={{ r: 216, g: 231, b: 76 }}
             cmyk={{ c: 19, m: 0, y: 84, k: 0 }}
             bg="#D9E74C"
-            textColor="text-black"
+            textColor="text-blue"
+            classname="-mt-15 md:-mt-25"
+
           />
         </div>
 
@@ -89,43 +96,49 @@ export default function S2() {
 
 function ColorRatio() {
   return (
-    <section className="w-full bg-gray-50 py-12 px-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+    <section className="w-full h-screen bg-gray-50 py-12 ">
+      <div className="flex flex-row gap-6 w-[90%] mx-auto">
         {/* 60% - Primary */}
-        <div className="relative bg-[#01203F] rounded-2xl flex items-center justify-center h-[300px] md:h-[400px]">
+        <div className="relative bg-[#01203F] rounded-2xl flex items-center justify-center h-[90vh] w-1/2">
           {/* Number Image */}
-          <img
-            src="/images/60.png" // replace with your "60" image
-            alt="60%"
-            className="absolute inset-0 w-full h-full object-contain opacity-100"
-          />
+          <div>
+
+            <img
+              src="/images/60p.png" // replace with your "60" image
+              alt="60%"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-contain opacity-100"
+            />
+          </div>
           {/* Text */}
           <p className="absolute bottom-4 text-white text-sm md:text-base px-4 text-center">
             Primary color, used as the dominant brand color
           </p>
         </div>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 h-[90vh] w-1/2">
           {/* 30% - Secondary */}
-          <div className="relative bg-[#01814E] rounded-2xl flex items-center justify-center h-[180px] md:h-[190px]">
+          <div className="relative bg-[#01814E] rounded-2xl flex items-center justify-center h-2/3">
+
             <img
-              src="/images/30.png" // replace with your "30" image
+              src="/images/30p.png" // replace with your "30" image
               alt="30%"
-              className="absolute inset-0 w-full h-full object-contain opacity-100"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-full object-contain opacity-100"
             />
-            <p className="absolute left-4 text-white text-sm md:text-base w-[70%]">
+            <p className="absolute left-6 text-white text-sm md:text-base w-[20%]">
               Secondary color, adding contrast and freshness
             </p>
           </div>
 
           {/* 10% - Accent */}
-          <div className="relative bg-[#D9E74C] rounded-2xl flex items-center justify-center h-[180px] md:h-[190px]">
-            <img
-              src="/images/10.png" // replace with your "10" image
-              alt="10%"
-              className="absolute inset-0 w-full h-full object-contain opacity-100"
-            />
-            <p className="absolute right-4 text-black text-sm md:text-base w-[70%] text-right">
+          <div className="relative bg-[#D9E74C] rounded-2xl flex items-center justify-center overflow-hidden h-1/3">
+
+              <img
+                src="/images/10p.png" // replace with your "10" image
+                alt="10%"
+                className="absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-contain opacity-100"
+              />
+
+            <p className="absolute right-1/6 text-black text-sm md:text-base w-[30%] text-right">
               Accent color, used for highlights and emphasis
             </p>
           </div>
@@ -137,12 +150,12 @@ function ColorRatio() {
 
 function PackingSection() {
   return (
-    <section className="relative w-full min-h-[60vh] flex items-center justify-center bg-[#01203F] overflow-hidden px-4 py-16">
+    <section className="relative w-full min-h-screen flex items-center justify-center bg-[#01203F] overflow-hidden px-4 py-16">
       {/* Content */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-6xl mx-auto">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-[90%] mx-auto">
         {/* Text Section */}
         <div className="w-full md:w-1/2 text-white font-poppins">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Packaging</h2>
+          <h2 className="text-4xl md:text-6xl font-[500] mb-8">Packaging</h2>
           <p className="text-lg md:text-xl font-light leading-relaxed mb-4">
             The Saga brand pattern is inspired by Australian native art, particularly the dot painting technique traditionally used by Indigenous Australian artists. This pattern serves as a visual bridge between Saga&apos;s Australian roots and its presence in Pakistan, where the name &quot;Saga&quot; is also linked to &quot;saggar&quot; meaning ocean or vastness in Urdu.
           </p>
@@ -157,8 +170,8 @@ function PackingSection() {
         <Image
           src="/images/pattern-1.png" // Place your right-side image here
           alt="Pattern Circles"
-          width={700}
-          height={700}
+          width={800}
+          height={800}
           className="object-contain opacity-50"
           priority
         />
