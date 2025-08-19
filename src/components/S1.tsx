@@ -412,7 +412,7 @@ function CoreStructurePattern2() {
                                 <p className="text-blue text-lg md:text-xl font-light leading-relaxed max-w-lg">
                                     Surrounding it are expanding circles of
                                     impact, influence, and connectivity,
-                                    illustrating how Saga's technology
+                                    illustrating how Saga&apos;s technology
                                     seamlessly integrates into daily life,
                                     creating a ripple effect of
                                     transformation and efficiency.                                </p>
